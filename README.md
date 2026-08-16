@@ -17,7 +17,7 @@ The project uses a C# console application and WiX Toolset to create and test a W
 
 - [x] Task 1.1 – Pass level
 - [x] Task 1.2 – Credit level
-- [ ] Task 1.3 – Distinction level
+- [x] Task 1.3 – Distinction level
 - [ ] Task 1.4 – High Distinction level
 
 This checklist will be updated as I complete each task.
