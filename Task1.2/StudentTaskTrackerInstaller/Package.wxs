@@ -3,7 +3,7 @@
 	<Package
 	  Name="Student Task Tracker"
 	  Manufacturer="Unna Nusen"
-	  Version="1.0.0.0"
+	  Version="1.1.0.0"
 	  UpgradeCode="{7A7B8174-9396-4E12-A71D-61866D377F91}"
 	  Scope="perMachine">
 
@@ -64,6 +64,20 @@
 				<File
 				  Id="TaskTrackerRuntimeConfig"
 				  Source="$(var.StudentTaskTracker.TargetDir)StudentTaskTracker.runtimeconfig.json"
+				  KeyPath="yes" />
+			</Component>
+
+			<Component Id="HumanizerDependency" Guid="*">
+				<File
+				  Id="HumanizerDLL"
+				  Source="$(var.StudentTaskTracker.TargetDir)Humanizer.dll"
+				  KeyPath="yes" />
+			</Component>
+
+			<Component Id="JsonDependency" Guid="*">
+				<File
+				  Id="NewtonsoftJsonDLL"
+				  Source="$(var.StudentTaskTracker.TargetDir)Newtonsoft.Json.dll"
 				  KeyPath="yes" />
 			</Component>
 
