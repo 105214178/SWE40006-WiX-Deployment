@@ -2,15 +2,17 @@
 
 This repository contains my work for the Desktop Application Deployment assignment in SWE40006 – Software Deployment and Evolution.
 
-The project uses a C# console application and WiX Toolset to create and test a Windows MSI installer.
+I used C#, Visual Studio and WiX Toolset to create Windows applications and package them as MSI installers.
 
 ## Tools used
 
-- Windows 11 virtual machine using UTM
+- Windows 11 ARM virtual machine using UTM
 - Visual Studio
 - C#
-- WiX Toolset
+- .NET
+- WiX Toolset 4
 - HeatWave extension
+- NuGet Package Manager
 - Git and GitHub
 
 ## Assignment progress
@@ -20,23 +22,55 @@ The project uses a C# console application and WiX Toolset to create and test a W
 - [x] Task 1.3 – Distinction level
 - [ ] Task 1.4 – High Distinction level
 
-This checklist will be updated as I complete each task.
-
-## Current work
+## Task 1.1 – Hello World application
 
 For Task 1.1, I:
 
-- Created and tested a simple C# console application.
+- Created and tested a simple C# Hello World application.
 - Created a WiX installer project.
 - Built an MSI installer.
 - Installed and ran the application.
 - Confirmed that the application appeared in Windows Installed Apps.
-- Uninstalled the application and checked that its installed files were removed.
+- Uninstalled the application and confirmed that its installed folder was removed.
+
+## Task 1.2 – Student Task Tracker
+
+For Task 1.2, I created my own C# console application called Student Task Tracker.
+
+The application:
+
+- Asks the user to enter two study tasks.
+- Stores the tasks in a list.
+- Displays the entered tasks.
+- Was packaged as an MSI installer using WiX.
+- Was tested through installation, execution and uninstallation.
+
+## Task 1.3 – External dependencies
+
+For Task 1.3, I added two external NuGet dependencies:
+
+- `Humanizer.Core`
+- `Newtonsoft.Json`
+
+Humanizer is used to format the application title. Newtonsoft.Json is used to convert the task list into JSON text.
+
+The WiX installer includes both external DLL files:
+
+- `Humanizer.dll`
+- `Newtonsoft.Json.dll`
+
+I confirmed that both DLLs were installed in the Student Task Tracker folder and that the installed application ran successfully.
 
 ## Repository structure
 
-- `HelloWorldApp` – the C# console application.
-- `WixExample` – the WiX installer project.
+- `Task1.1/HelloWorldApp` – the C# Hello World application.
+- `Task1.1/WixExample` – the WiX installer for the Hello World application.
+- `Task1.2/StudentTaskTracker` – my custom C# application.
+- `Task1.2/StudentTaskTrackerInstaller` – the WiX installer containing the application and external DLL dependencies.
+
+## Task 1.4 – Distribution
+
+Task 1.4 will contain the GitHub Release and WinGet package submission details after they are completed.
 
 ## Student
 
