@@ -1,0 +1,74 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+	<Package
+	  Name="Student Task Tracker"
+	  Manufacturer="Unna Nusen"
+	  Version="1.0.0.0"
+	  UpgradeCode="{7A7B8174-9396-4E12-A71D-61866D377F91}"
+	  Scope="perMachine">
+
+		<MajorUpgrade
+		  DowngradeErrorMessage="A newer version is already installed." />
+
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature
+		  Id="MainFeature"
+		  Title="Student Task Tracker"
+		  Level="1">
+
+			<ComponentGroupRef Id="ApplicationFiles" />
+
+		</Feature>
+
+	</Package>
+
+	<Fragment>
+
+		<StandardDirectory Id="ProgramFiles64Folder">
+			<Directory
+			  Id="INSTALLFOLDER"
+			  Name="StudentTaskTracker" />
+		</StandardDirectory>
+
+	</Fragment>
+
+	<Fragment>
+
+		<ComponentGroup
+		  Id="ApplicationFiles"
+		  Directory="INSTALLFOLDER">
+
+			<Component Id="ApplicationEXE" Guid="*">
+				<File
+				  Id="TaskTrackerEXE"
+				  Source="$(var.StudentTaskTracker.TargetDir)StudentTaskTracker.exe"
+				  KeyPath="yes" />
+			</Component>
+
+			<Component Id="ApplicationDLL" Guid="*">
+				<File
+				  Id="TaskTrackerDLL"
+				  Source="$(var.StudentTaskTracker.TargetDir)StudentTaskTracker.dll"
+				  KeyPath="yes" />
+			</Component>
+
+			<Component Id="ApplicationDeps" Guid="*">
+				<File
+				  Id="TaskTrackerDeps"
+				  Source="$(var.StudentTaskTracker.TargetDir)StudentTaskTracker.deps.json"
+				  KeyPath="yes" />
+			</Component>
+
+			<Component Id="ApplicationRuntimeConfig" Guid="*">
+				<File
+				  Id="TaskTrackerRuntimeConfig"
+				  Source="$(var.StudentTaskTracker.TargetDir)StudentTaskTracker.runtimeconfig.json"
+				  KeyPath="yes" />
+			</Component>
+
+		</ComponentGroup>
+
+	</Fragment>
+
+</Wix>
