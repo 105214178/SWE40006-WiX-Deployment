@@ -1,0 +1,55 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+	<Package
+	  Name="HelloWorldApp Setup"
+	  Manufacturer="SwinburneStudent"
+	  Version="1.0.0.0"
+	  UpgradeCode="{41D542A8-1B76-4BA9-AADE-1E3C52D4AE5A}"
+	  Scope="perMachine">
+
+		<MajorUpgrade
+		  DowngradeErrorMessage="A newer version of HelloWorldApp is already installed." />
+
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature
+		  Id="MainFeature"
+		  Title="HelloWorldApp"
+		  Level="1">
+
+			<ComponentGroupRef Id="ApplicationFiles" />
+		</Feature>
+	</Package>
+
+	<Fragment>
+		<StandardDirectory Id="ProgramFiles64Folder">
+			<Directory Id="INSTALLFOLDER" Name="HelloWorldApp" />
+		</StandardDirectory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ApplicationFiles" Directory="INSTALLFOLDER">
+			<Component Id="MainApplication" Guid="{3E2317A2-F54B-4619-89F7-6414C923808C}">
+
+				<File
+				  Id="HelloWorldEXE"
+				  Source="$(var.HelloWorldApp.TargetDir)HelloWorldApp.exe"
+				  KeyPath="yes" />
+
+				<File
+				  Id="HelloWorldDLL"
+				  Source="$(var.HelloWorldApp.TargetDir)HelloWorldApp.dll" />
+
+				<File
+				  Id="HelloWorldDeps"
+				  Source="$(var.HelloWorldApp.TargetDir)HelloWorldApp.deps.json" />
+
+				<File
+				  Id="HelloWorldRuntimeConfig"
+				  Source="$(var.HelloWorldApp.TargetDir)HelloWorldApp.runtimeconfig.json" />
+
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+
+</Wix>
