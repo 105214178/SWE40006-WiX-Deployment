@@ -16,7 +16,7 @@ The project uses a C# console application and WiX Toolset to create and test a W
 ## Assignment progress
 
 - [x] Task 1.1 – Pass level
-- [ ] Task 1.2 – Credit level
+- [x] Task 1.2 – Credit level
 - [ ] Task 1.3 – Distinction level
 - [ ] Task 1.4 – High Distinction level
 
